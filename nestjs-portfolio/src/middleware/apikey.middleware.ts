@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable, NestMiddleware } from '@nestjs/common';
+import { Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
 import { config } from "dotenv";
 
@@ -16,6 +16,5 @@ export class ApikeyMiddleware implements NestMiddleware {
         } else{
             next()
         }
-
     }
 }

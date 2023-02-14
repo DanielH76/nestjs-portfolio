@@ -5,8 +5,6 @@ export interface BlogpostProps {
     body: string
 } 
 
-
-
 export class Blogpost {
 
     readonly id: number
