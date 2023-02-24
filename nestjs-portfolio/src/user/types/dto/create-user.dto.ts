@@ -5,7 +5,7 @@ export class CreateUserDto {
     @Field()
     readonly name: string
 
-    @Field(() => Int)
+    @Field(type => Int)
     readonly age: number
 
     @Field()

@@ -1,8 +1,5 @@
-import { Int } from '@nestjs/graphql'
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
-import * as mongoose from 'mongoose'
 import { HydratedDocument } from 'mongoose'
-import { UserService } from '../services/user.service'
 
 export type UserDocument = HydratedDocument<UserS>
 
@@ -22,7 +19,6 @@ export class UserS {
 }
 
 export const UserSchema = SchemaFactory.createForClass(UserS)
-console.log(UserSchema)
 
 /* export const UserSchema = new mongoose.Schema({
     id: Number,

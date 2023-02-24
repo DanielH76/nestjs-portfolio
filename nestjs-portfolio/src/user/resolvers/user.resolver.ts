@@ -17,10 +17,10 @@ export class UserResolver {
   } 
 
 
-/*   @Mutation(returns => CreateUserDto)
+   @Mutation(() => UserFindAll)
   async createUser(@Args('user') user: CreateUserDto) {
-    return this.userService.create(user)
-  } */
+    return await this.userService.create(user)
+  } 
 
 /*   @ResolveField()
   async posts(@Parent() author: Author) {
