@@ -1,15 +1,12 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { BlogpostController } from 'src/controllers/blogpost.controller';
 import { ApikeyMiddleware } from 'src/middleware/apikey.middleware';
+import { BlogpostResolver } from 'src/resolvers/blogpost.resolver';
 import { BlogpostService } from 'src/services/blogpost.service';
 
 @Module({
-    imports:[],
-    controllers: [BlogpostController],
-    providers: [BlogpostService]
+    providers: [BlogpostResolver, BlogpostService]
 })
-export class BlogpostModule implements NestModule {
-    configure(consumer: MiddlewareConsumer) {
-      consumer.apply(ApikeyMiddleware).forRoutes("blogpost*").apply()
-    }
+export class BlogpostQLModule {
+
 }

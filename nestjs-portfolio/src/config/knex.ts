@@ -41,7 +41,6 @@ export const getClient = (): Knex<any, unknown[]> => {
       wrapConfig({ client: "mysql2", connection: connectionConfig })
     ); */
   _client = knex({ client: "mysql2", connection: connectionConfig })
-  console.log(connectionConfig.password)
 
   return _client;
 };

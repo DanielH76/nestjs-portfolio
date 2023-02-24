@@ -14,6 +14,7 @@ export class BlogpostService {
 
         return posts
     }
+    private name: string = "test"
 
     async getByID(id: string): Promise<Blogpost>{
         const idParsed: number = parseInt(id)
@@ -49,6 +50,12 @@ export class BlogpostService {
     async update(post: BlogpostProps) {
         console.log(post)
 
+        const update = await this.client("blogposts")
+        .update(post)
+        .where("id", post.id)
+
+        return update
+/* 
         const oldPost = await this.client("blogposts")
         .select("*")
         .where("id", post.id)
@@ -58,10 +65,10 @@ export class BlogpostService {
         post.title  !== undefined ? oldPost.title = post.title: oldPost.title
         post.poster  !== undefined ? oldPost.poster = post.poster: oldPost.poster
 
-        const update = await this.client("blogposts")
+        const update2 = await this.client("blogposts")
         .where("id", post.id)
         .update(oldPost)
         return update
-
+ */
     }
 }

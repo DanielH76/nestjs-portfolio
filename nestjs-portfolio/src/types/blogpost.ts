@@ -1,3 +1,5 @@
+import { GraphQLSchema } from "graphql"
+
 export interface BlogpostProps {
     id?: number
     poster: string
@@ -17,7 +19,7 @@ export class Blogpost {
         this.poster = props.poster
         this.title = props.title
         this.body = props.body
-    }
+    } 
 
     get titleAndBody(): string {
         return this.title + this.body
